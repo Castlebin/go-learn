@@ -1,0 +1,21 @@
+name: Build and Test
+
+on: push
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 'stable'
+          check-latest: true
+      - name: Vet
+        run: |
+          go vet ./...
+
+      - name: Test
+        run: |
+          go test -race ./...
