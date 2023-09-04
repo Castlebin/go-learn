@@ -18,4 +18,12 @@ func main() {
 
 	/* 使用指针访问值 */
 	fmt.Printf("*ip 变量的值: %d\n", *ip)
+
+	// 空指针
+	var ptr *int
+
+	fmt.Printf("ptr 的值为 : %x\n", ptr)
+	if ptr == nil { // 没有赋值，指针默认值为 nil
+		fmt.Println("ptr is nil")
+	}
 }
