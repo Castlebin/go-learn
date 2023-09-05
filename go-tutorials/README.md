@@ -19,3 +19,5 @@ replace github.com/Castlebin/go-learn/go-tutorials/Create_a_Go_module => ../gree
 
     同样的，在这之后，应该再运行 `go mod tidy` ，会在 go.mod 文件中，生成依赖模块的版本信息（当前工程的模块，所以这里是一个虚拟版本号）
     require github.com/Castlebin/go-learn/go-tutorials/Create_a_Go_module/greetings v0.0.0-00010101000000-000000000000
+
+5. go test  运行单测
