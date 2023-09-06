@@ -58,6 +58,18 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("ID of added album: %v\n", albID)
+
+	// 更新数据
+	rowsAffected, err := updateAlbum(Album{
+		ID:     5,
+		Title:  "The Modern Sound of Betty Carter (updated)",
+		Artist: "Betty Carter",
+		Price:  49.99,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("rowsAffected of updated album: %v\n", rowsAffected)
 }
 
 type Album struct {
@@ -118,4 +130,17 @@ func addAlbum(alb Album) (int64, error) {
 		return 0, fmt.Errorf("addAlbum: %v", err)
 	}
 	return id, nil
+}
+
+// 更新数据库数据
+func updateAlbum(alb Album) (int64, error) {
+	result, err := db.Exec("UPDATE album SET title=?, artist=?, price=? WHERE id=?", alb.Title, alb.Artist, alb.Price, alb.ID)
+	if err != nil {
+		return 0, fmt.Errorf("updateAlbum: %v", err)
+	}
+	rowsAffected, err := result.RowsAffected()
+	if err != nil {
+		return 0, fmt.Errorf("updateAlbum: %v", err)
+	}
+	return rowsAffected, nil
 }
