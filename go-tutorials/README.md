@@ -34,3 +34,7 @@ replace github.com/Castlebin/go-learn/go-tutorials/Create_a_Go_module => ../gree
 
 使用 `go work` 是一种更好的工程管理方式，这样可以不用再使用 `go mod edit -replace` 命令来在 go.mod 中生成 replace 指令 将依赖本地工程中的包指向到本地工程的目录。更符合工程管理的规范
 
+- `go work use [-r] [dir]` adds a use directive to the go.work file for dir, if it exists, and removes the use directory if the argument directory doesn’t exist. The -r flag examines subdirectories of dir recursively.
+- `go work edit` edits the go.work file similarly to go mod edit
+- `go work sync` syncs dependencies from the workspace’s build list into each of the workspace modules.
+
