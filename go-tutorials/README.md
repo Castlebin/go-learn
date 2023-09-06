@@ -21,3 +21,13 @@ replace github.com/Castlebin/go-learn/go-tutorials/Create_a_Go_module => ../gree
     require github.com/Castlebin/go-learn/go-tutorials/Create_a_Go_module/greetings v0.0.0-00010101000000-000000000000
 
 5. go test  运行单测
+
+6. go work init ./hello   
+创建一个 go 工程文件，并且包含当前目录下的 ./hello 文件夹中的模块。
+运行该命令后，会在目录下生成一个 go.work 文件，格式和 go.mod 类似。
+这是 go 工程的工程文件。
+`use ./hello` 表示该工程使用了 ./hello 目录
+
+有了这个文件之后，你就可以直接在工程目录下执行 `go run ./hello` 来运行 hello 中的 go 程序了
+
+
