@@ -30,4 +30,7 @@ replace github.com/Castlebin/go-learn/go-tutorials/Create_a_Go_module => ../gree
 
 有了这个文件之后，你就可以直接在工程目录下执行 `go run ./hello` 来运行 hello 中的 go 程序了
 
+7. go work use ./example/hello 为工程添加要使用的目录，给 go 的编译器来做识别的
+
+使用 `go work` 是一种更好的工程管理方式，这样可以不用再使用 `go mod edit -replace` 命令来在 go.mod 中生成 replace 指令 将依赖本地工程中的包指向到本地工程的目录。更符合工程管理的规范
 
