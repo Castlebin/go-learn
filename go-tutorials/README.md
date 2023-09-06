@@ -38,3 +38,8 @@ replace github.com/Castlebin/go-learn/go-tutorials/Create_a_Go_module => ../gree
 - `go work edit` edits the go.work file similarly to go mod edit
 - `go work sync` syncs dependencies from the workspace’s build list into each of the workspace modules.
 
+8. go get golang.org/x/example/hello@v0.1.0  为模块添加指定的依赖信息
+甚至还可以直接使用 `go get .` 命令为模块添加它 import 的包的依赖信息。在 go.mod 和 go.sum 文件下增加依赖信息
+
+
+
