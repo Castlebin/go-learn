@@ -2,7 +2,10 @@ module github.com/Castlebin/go-learn/go-tutorials/Developing_a_RESTful_API_with_
 
 go 1.21.0
 
-require github.com/gin-gonic/gin v1.9.1
+require (
+	github.com/gin-gonic/gin v1.9.1
+	github.com/go-sql-driver/mysql v1.7.1
+)
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
