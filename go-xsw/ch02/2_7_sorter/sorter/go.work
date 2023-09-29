@@ -1,0 +1,7 @@
+go 1.1
+
+use (
+	.
+	./algorithms/bubblesort
+	./algorithms/qsort
+)
