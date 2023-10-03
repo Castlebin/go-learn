@@ -23,5 +23,9 @@
 # IDEA
 .idea
 
+# vscode
+.vscode 
+
+
 bubblesorted.dat
 qsorted.dat
