@@ -1,0 +1,3 @@
+[submodule "go_pl/gopl.io"]
+	path = go_pl/gopl.io
+	url = git@github.com:adonovan/gopl.io.git
