@@ -19,5 +19,8 @@ func SetUpRoute(engine *gin.Engine) {
 
 		// 获取产品详情
 		ProductRouter.GET("/product/:id", product.Detail)
+
+		// 测试下捕获异常   curl --location 'http://localhost:8080/product/panic'
+		ProductRouter.GET("/product/panic", product.Panic)
 	}
 }
