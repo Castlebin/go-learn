@@ -1,8 +1,11 @@
-package main
+package test
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func Test_SetV_SetP(t *testing.T) {
 	a := A{B{C{1}}}
 	setV(a, 2)                           // setV inner:  2
 	fmt.Println("after setV: ", a.B.C.C) // setV outer:  1   ，可以看到，setV 内部的赋值操作，没有影响到外层的 a

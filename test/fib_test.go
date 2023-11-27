@@ -1,8 +1,11 @@
-package main
+package test
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func Test_fib(t *testing.T) {
 	fmt.Println(fibs(10))
 }
 
