@@ -1,3 +1,9 @@
 [submodule "go_pl/gopl.io"]
 	path = go_pl/gopl.io
 	url = git@github.com:adonovan/gopl.io.git
+[submodule "go-jaeger-demo"]
+	path = go-jaeger-demo
+	url = git@github.com:xinliangnote/go-jaeger-demo.git
+[submodule "go-gin-api-1.0.git"]
+	path = go-gin-api-1.0.git
+	url = git@github.com:Castlebin/go-gin-api-1.0.git
