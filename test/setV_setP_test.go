@@ -5,6 +5,11 @@ import (
 	"testing"
 )
 
+/*
+*
+
+	Go 方法调用时，浅拷贝 和 深拷贝 （看类型）（引用类型、值类型）
+*/
 func Test_SetV_SetP(t *testing.T) {
 	a := A{B{C{1}}}
 	setV(a, 2)                           // setV inner:  2
