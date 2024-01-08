@@ -7,3 +7,9 @@
 [submodule "go-gin-api-1.0.git"]
 	path = go-gin-api-1.0.git
 	url = git@github.com:Castlebin/go-gin-api-1.0.git
+[submodule "Advanced-Go-Programming"]
+	path = Advanced-Go-Programming
+	url = git@github.com:Castlebin/Advanced-Go-Programming.git
+[submodule "The-Go-Programming-Language"]
+	path = The-Go-Programming-Language
+	url = git@github.com:Castlebin/The-Go-Programming-Language.git
