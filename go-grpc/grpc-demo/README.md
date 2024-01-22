@@ -56,7 +56,7 @@ GreeterServer 接口定义：
 type GreeterServer interface {
 	// Sends a greeting
 	SayHello(context.Context, *HelloRequest) (*HelloReply, error)
-	// mustEmbedUnimplementedGreeterServer()  // 
+	mustEmbedUnimplementedGreeterServer()
 }
 ```
 
