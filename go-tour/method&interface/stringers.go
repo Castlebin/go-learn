@@ -41,6 +41,7 @@ type Person2 struct {
 }
 
 // 区别在于，这里的 String() 方法是指针接收者，而上面的是值接收者。
+// 这个跟 go 语言认为什么才算实现了接口有关。实现接口的方法，必须是值接收者。指针接收者，不算实现接口的方法。
 func (p2 *Person2) String() string {
 	return fmt.Sprintf("%v (%v years)", p2.Name, p2.Age)
 }
