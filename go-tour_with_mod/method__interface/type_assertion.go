@@ -20,4 +20,7 @@ func main() {
 	c, ok := x.(int)
 	fmt.Println(c, ok)
 
+	f := t.(float64) // 报错(panic)。因为 i 并不是 float64 类型，所以这里会触发 panic。注意和上面的区别。一个需要用 ok 来判断，一个是直接 panic 。
+	fmt.Println(f)
+
 }
