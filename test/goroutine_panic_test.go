@@ -96,3 +96,49 @@ func Test_Go_Routine_Panic_Recover(t *testing.T) {
 		time.Sleep(time.Second)
 	}
 }
+
+func Test_Go_Routine_Panic_Recover_2(t *testing.T) {
+	go func() {
+		// 得在 goroutine 内部 recover，才能捕获到 panic。采用 defer + recover 的方式
+		// (这样是不行的，因为，这里的 defer 是在外层的 goroutine 中，而不是在内层的 goroutine 中)
+		defer func() {
+			if r := recover(); r != nil {
+				// 在这里处理panic
+				fmt.Println("发生了panic:", r)
+			}
+		}()
+
+		go func() {
+			// 得在 goroutine 内部 recover，才能捕获到 panic。采用 defer + recover 的方式
+			// (这样是不行的，因为，这里的 defer 是在外层的 goroutine 中，而不是在内层的 goroutine 中)
+			defer func() {
+				if r := recover(); r != nil {
+					// 在这里处理panic
+					fmt.Println("发生了panic:", r)
+				}
+			}()
+
+			go func() {
+				for i := 0; i < 10; i++ {
+					println("p: " + strconv.Itoa(i))
+					time.Sleep(time.Second)
+					if i == 3 {
+						panic("test panic")
+					}
+				}
+			}()
+		}()
+	}()
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			println("n: " + strconv.Itoa(i))
+			time.Sleep(time.Second)
+		}
+	}()
+
+	for i := 0; i < 10; i++ {
+		println("m: " + strconv.Itoa(i))
+		time.Sleep(time.Second)
+	}
+}
